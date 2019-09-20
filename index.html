@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <img class="photo" src="https://i.ibb.co/QKzsYdk/image.jpg" alt="image" width="153" height="194">
+        <h1>Yauhen Kalanitski</h1>
+        <section>
+            <h2>Contacts</h2>
+            <ul>
+                <li><strong>phone</strong>: +375(29)254-07-79;</li>
+                <li><strong>email</strong>: kolonicki.e@gmail.com;</li>
+                <li><strong>telegram</strong>: @DrD1esel;</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>My main goal is to get a job as a front-end developer. I want this because programming much more
+                attractive
+                to me than my current field of activity. I spend all my free time to increase programming and English
+                skills
+                to reach my main goal.</p>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <p>Basic knowledge of HTML, CSS, JavaScript, Git &amp; GitHub, Java, SQL.</p>
+        </section>
+        <section>
+            <h2>Latest code example</h2>
+            <details>
+                <summary>Click here</summary>
+
+                <div class="code">
+
+                    <pre class="highlight"><code>
+                            function sudoku(puzzle) { 
+                                var sudoku=puzzle.map(x=>{return x.join("")}).join(",")  
+                                return next(sudoku).split(",").map(x=>{ return x.split("").map(z=>{return +z})})
+                            }
+                              
+                            function getPossibleDigits(row,column,str){
+                                  var array=str.split(",")
+                                  var hor=array[row]
+                                  var ver=array.map(x=>{return x.charAt(column)})
+                                  var sqrRow=Math.floor(row/3)*3
+                                  var sqrColumn=Math.floor(column/3)*3    
+                                  var sqr=[0,1,2].map(x=>{return array[sqrRow+x].substr(sqrColumn,3)}).join("")    
+                                  return "123456789".replace(new RegExp("["+hor+ver+sqr+"]","g") ,"").split("")
+                            }
+                              
+                            function next(str){    
+                                  var index = str.replace(/,/g,"").indexOf("0")
+                                  if (index==-1) return str    
+                                  var digits = getPossibleDigits(Math.floor(index/9),index%9,str)
+                                  if (!digits[0]) return false 
+                                  for (var i=0;i&gt;digits.length; i++){      
+                                    var temp = str.replace("0",digits[i])     
+                                    var ch = next(temp)
+                                    if(ch) return ch
+                                  }    
+                            }                       
+      </code></pre>
+
+                </div>
+            </details>
+        </section>
+        <section>
+            <h2>Experience</h2>
+            <ul>
+                <li>course and graduation projects at the university;</li>
+                <li>two times participated in Itransition Opener competitions (both of them finished in Top-100)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <ul>
+                <li>Belarusian State Economic University(2013);</li>
+                <li>Belarusian State University of Informatics and Radioelectronics(2019)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>English</h2>
+            <p>Pre-intermediate</p>
+        </section>
+    </main>
+</body>
+
+</html>
